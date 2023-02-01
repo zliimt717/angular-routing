@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
+import { StarComponent } from '../star/star.component';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    StarComponent
   ],
   imports: [
-    SharedModule
+    CommonModule
+  ],
+  exports:[
+    StarComponent,
+    CommonModule,
+    FormsModule
   ]
 })
-export class UserModule { }
+export class SharedModule { }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MessageComponent } from './message.component';
+import { SharedModule } from 'src/app/shared/shared/shared.module';
 
 
 
@@ -9,7 +9,7 @@ import { MessageComponent } from './message.component';
     MessageComponent
   ],
   imports: [
-    CommonModule
+    SharedModule
   ]
 })
 export class MessageModule { }

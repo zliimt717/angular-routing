@@ -11,21 +11,28 @@ import { RouterModule } from '@angular/router';
 import { MessageComponent } from './messages/message/message.component';
 import { MessageModule } from './messages/message/message.module';
 import { UserModule } from './user/user.module';
+import { WelcomeComponent } from './home/welcome/welcome.component';
+import { StarComponent } from './shared/star/star.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MessageModule,
-    UserModule
+    UserModule,
+    RouterModule.forRoot([
+      {path:'welcome', component:WelcomeComponent},
+      {path:'',redirectTo:'welcome',pathMatch:'full'},
+      {path:'**',component:PageNotFoundComponent}
+    ]),
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
