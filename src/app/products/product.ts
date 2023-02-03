@@ -1,5 +1,5 @@
 export interface Product{
-    id:number |null;
+    id:number;
     productName:string|null;
     productCode:string |null;
     category: string |null;
