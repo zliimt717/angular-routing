@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-product-edit-info',
@@ -6,6 +8,17 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class ProductEditInfoComponent {
+export class ProductEditInfoComponent implements  OnInit{
+  @ViewChild(NgForm, { static: false }) productFrom!: NgForm;
+
+  errorMessage!: string;
+  product={id:1,productName:'test',productCode:'test'};
+
+  constructor(private route:ActivatedRoute){}
+  
+  ngOnInit(): void {
+  }
+
+
 
 }
